@@ -236,7 +236,7 @@ func validateBodyExclusivity(s *StepSpec, prefix string) error {
 		count++
 	}
 	if count > 1 {
-		return &ConfigError{Field: prefix, Message: "at most one of body, body_raw, or body_form may be set"}
+		return &ConfigError{Field: prefix + ".body", Message: "at most one of body, body_raw, or body_form may be set"}
 	}
 	return nil
 }
